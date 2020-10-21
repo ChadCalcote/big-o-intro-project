@@ -15,16 +15,7 @@ function quadraticBiggestFish(fishes) {
 
 // console.log(quadraticBiggestFish(fishies)); //fiiiissshhhhhh
 
-const fishies = [
-  "fish",
-  "fiiish",
-  "fiiiiish",
-  "fiiiish",
-  "fffish",
-  "ffiiiiisshh",
-  "fsh",
-  "fiiiissshhhhhh",
-];
+
 
 function nlognBiggestFish(fishes) {
   let newFishies = fishes.sort((fish1, fish2) => fish1.length - fish2.length);
@@ -38,12 +29,32 @@ function nlognBiggestFish(fishes) {
   // return longestFish;
 }
 
-console.log(nlognBiggestFish(fishies));
+// console.log(nlognBiggestFish(fishies));
 // O(n * log(n)) => loglinear
 
 function linearBiggestFish(fishes) {
-  // Code goes here ...
+  let bigFish = fishes[0];
+  for (let i = 1; i < fishes.length; i++) {
+    // console.log(fishes[i]);
+    if (fishes[i].length > bigFish.length) {
+      bigFish = fishes[i];
+    }
+  }
+  return bigFish;
 }
+
+const fishies = [
+  "fish",
+  "fiiish",
+  "fiiiiish",
+  "fiiiish",
+  "fffish",
+  "ffiiiiisshh",
+  "fsh",
+  "fiiiissshhhhhh",
+];
+
+// console.log(linearBiggestFish(fishies));
 
 tilesArray = [
   "up",
