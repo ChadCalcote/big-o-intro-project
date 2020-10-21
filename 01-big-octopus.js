@@ -15,8 +15,6 @@ function quadraticBiggestFish(fishes) {
 
 // console.log(quadraticBiggestFish(fishies)); //fiiiissshhhhhh
 
-
-
 function nlognBiggestFish(fishes) {
   let newFishies = fishes.sort((fish1, fish2) => fish1.length - fish2.length);
   return newFishies[newFishies.length - 1];
@@ -67,8 +65,13 @@ tilesArray = [
   "left-up",
 ];
 function slowDance(direction, tilesArray) {
-  // Code goes here ...
+  for (let i = 0; i < tilesArray.length; i++) {
+    if (tilesArray[i] === direction) {
+      return i;
+    }
+  }
 }
+console.log(slowDance("up", tilesArray));
 
 tilesObj = {
   up: 0,
