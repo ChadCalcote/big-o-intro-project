@@ -71,7 +71,7 @@ function slowDance(direction, tilesArray) {
     }
   }
 }
-console.log(slowDance("up", tilesArray));
+// console.log(slowDance("up", tilesArray));
 
 tilesObj = {
   up: 0,
@@ -84,8 +84,11 @@ tilesObj = {
   "left-up": 7,
 };
 function fastDance(direction, tilesObj) {
-  // Code goes here ...
+  // returning a number (index)
+  return tilesObj[direction];
 }
+
+console.log(fastDance("up", tilesObj));
 
 /*
 
