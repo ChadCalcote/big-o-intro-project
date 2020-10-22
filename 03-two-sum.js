@@ -8,7 +8,22 @@ function badTwoSum(arr, targetSum) {
 }
 
 function okayTwoSum1(arr, targetSum) {
-  // Code goes here ...
+  arr.sort();
+  let i = 0,
+    j = arr.length - 1;
+
+  while (i < j) {
+    let currentSum = arr[i] + arr[j];
+    if (currentSum > targetSum) {
+      j -= 1;
+    } else if (currentSum < targetSum) {
+      i += 1;
+    } else {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function okayTwoSum2(arr, targetSum) {
