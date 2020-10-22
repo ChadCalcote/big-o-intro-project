@@ -27,7 +27,17 @@ function okayTwoSum1(arr, targetSum) {
 }
 
 function okayTwoSum2(arr, targetSum) {
-  // Code goes here ...
+  arr.sort();
+  for (let i = 0; i < arr.length; i++) {
+    let num = arr[i];
+    let complement = targetSum - num;
+    let complement_idx = binarySearch(arr, complement);
+    if (complement_idx != -1 && complement_idx != i) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function twoSum(arr, targetSum) {
